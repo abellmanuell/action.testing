@@ -3,3 +3,21 @@ name: YAML Tutorial
 on:
   push:
     branches: [main]
+
+jobs:
+  build:
+    name: Builder Job section
+    needs: [Development]
+    steps:
+      - name: Build and deploy on cloud
+
+  dev:
+    name: Development
+    steps:
+      - name: Run the Developer
+
+  Test:
+    name: Testing
+    needs: [build, dev]
+    steps:
+      - name: Testing the application
